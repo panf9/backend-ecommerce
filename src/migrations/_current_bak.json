@@ -1,0 +1,66 @@
+{
+    "tables": {
+        "roles": {
+            "tableName": "roles",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "status": {
+                    "defaultValue": {
+                        "value": true
+                    },
+                    "field": "status",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "created_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updated_at",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "created_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updated_at",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 2
+}
