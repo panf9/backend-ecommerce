@@ -5,3 +5,8 @@ export class userInterface {
     update(id, body) {} 
     delete() {}
 }
+
+export class UserPasswordInterface {
+    hashPassword(password) {}
+    validatePassword(passwordHash, password) {}
+}

@@ -4,7 +4,7 @@ import { AuthController } from "./authController"
 
 export class AuthRouter {
     constructor(){
-        this.model = models
+        this.model = models.users
         this.service = new AuthService(this.model)
         this.controller = new AuthController(this.service)
     }

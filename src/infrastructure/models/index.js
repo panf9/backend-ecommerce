@@ -2,7 +2,6 @@ import path from "path"
 import fs from "fs"
 import { Sequelize } from "sequelize"
 import config from "../../config/sequelizeConfig"
-import { log } from "console"
 
 const models = {}
 const sequelize = new Sequelize(config.development)

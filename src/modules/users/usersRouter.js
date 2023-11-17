@@ -1,10 +1,12 @@
 import { models } from "../../infrastructure/models"
 import { UserService } from "./usersService"
+import { UserPasswordService } from "./usersPasswordService"
 import { UserController } from "./usersController"
 
 export class UserRouter {
     constructor(){
-        this.service = new UserService(models)
+        this.servicePassword = new UserPasswordService()
+        this.service = new UserService(models, this.servicePassword)
         this.controller = new UserController(this.service)
     }
 
