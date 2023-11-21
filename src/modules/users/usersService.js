@@ -33,6 +33,8 @@ export class UserService extends userInterface {
 
   // https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
   async create(body){
+    const hashPassword = await this.passwordService.hashPassword(body.password)
+    body.password = hashPassword
     return await this.userModel.create(body)
   }
 

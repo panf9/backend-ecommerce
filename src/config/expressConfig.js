@@ -12,11 +12,11 @@ export class ExpressConfig {
         this.app.use(bodyParser.json())
     }
 
-    setRouters(routers) {
-        routers.forEach(router => {
-            this.app[router.method](router.path, router.handler)
-        });
-    }
+    // setRouters(routers) {
+    //     routers.forEach(router => {
+    //         this.app[router.method](router.path, router.handler)
+    //     });
+    // }
 
     listen(){
         this.app.listen(this.port, () => {
