@@ -1,6 +1,6 @@
 import { Model, DataTypes, DATE } from "sequelize"
 
-export default class UserModel extends Model {
+export default class ProductModel extends Model {
   // https://sequelize.org/docs/v6/core-concepts/model-basics/
   static associate(models){
     this.belongsTo(models.categories, {
@@ -54,6 +54,9 @@ export default class UserModel extends Model {
         },
         image_3: {
           type: DataTypes.STRING
+        },
+        cat_id:{
+          type: DataTypes.INTEGER
         },
         status: {
           type: DataTypes.BOOLEAN,

@@ -11,9 +11,6 @@ export class UserService extends userInterface {
   // sequelize.org/docs/v6/core-concepts/model-querying-finders/
   async getAll(){
     return await this.userModel.findAll({
-      attributes: {
-        exclude: ["password"]
-      },
       where:{
         status: true
       },

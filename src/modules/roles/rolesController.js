@@ -43,5 +43,4 @@ export class RoleController {
     }
     res.status(404).send("")
   }
-
 }

@@ -7,6 +7,9 @@ export default class UserModel extends Model {
       foreignKey: 'rol_id',
       targetKey: 'id'
     })
+    this.hasMany(models.orders, {
+      foreignKey: 'user_id'
+    })
   }
 
   static init(sequelize){
@@ -29,7 +32,8 @@ export default class UserModel extends Model {
           type: DataTypes.STRING
         },
         rol_id: {
-          type: DataTypes.INTEGER
+          type: DataTypes.INTEGER,
+          default: 3
         },
         status: {
           type: DataTypes.BOOLEAN,

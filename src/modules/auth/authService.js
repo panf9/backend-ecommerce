@@ -9,13 +9,13 @@ export class AuthService extends AuthInterface{
   }
 
   // Creamos un método interno
-  async _getByUsername(username){
-    return await this.userModel.findOne({where: {username: username} })
+  async _getByUsername(email){
+    return await this.userModel.findOne({where: {email: email} })
   }
 
   async signIn(body){
-    const { username, password } = body
-    const user = await this._getByUsername(username)
+    const { email, password } = body
+    const user = await this._getByUsername(email)
     if (user){
       const validatePassword = await this.passwordService.validatePassword(user.password, password)
       if (!validatePassword){

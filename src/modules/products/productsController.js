@@ -1,4 +1,4 @@
-export class ProductsController{
+export class ProductController{
     // Creamos el constructor de la clase
     constructor(productsService) {
         this.productsService = productsService

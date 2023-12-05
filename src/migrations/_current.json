@@ -1,5 +1,182 @@
 {
     "tables": {
+        "categories": {
+            "tableName": "categories",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "ninkename": {
+                    "field": "ninkename",
+                    "seqType": "Sequelize.STRING"
+                },
+                "status": {
+                    "defaultValue": {
+                        "value": true
+                    },
+                    "field": "status",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "created_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updated_at",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "orders": {
+            "tableName": "orders",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "order": {
+                    "field": "order",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "user_id": {
+                    "default": 3,
+                    "field": "user_id",
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "NO ACTION",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "status": {
+                    "defaultValue": {
+                        "value": true
+                    },
+                    "field": "status",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "created_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updated_at",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "products": {
+            "tableName": "products",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "brand": {
+                    "field": "brand",
+                    "seqType": "Sequelize.STRING"
+                },
+                "sku": {
+                    "field": "sku",
+                    "seqType": "Sequelize.STRING"
+                },
+                "condition": {
+                    "field": "condition",
+                    "seqType": "Sequelize.STRING"
+                },
+                "sotck": {
+                    "field": "sotck",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "desciption_short": {
+                    "field": "desciption_short",
+                    "seqType": "Sequelize.STRING"
+                },
+                "description": {
+                    "field": "description",
+                    "seqType": "Sequelize.STRING"
+                },
+                "symbol": {
+                    "field": "symbol",
+                    "seqType": "Sequelize.STRING"
+                },
+                "price": {
+                    "field": "price",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "price_desc": {
+                    "field": "price_desc",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "image_1": {
+                    "field": "image_1",
+                    "seqType": "Sequelize.STRING"
+                },
+                "image_2": {
+                    "field": "image_2",
+                    "seqType": "Sequelize.STRING"
+                },
+                "image_3": {
+                    "field": "image_3",
+                    "seqType": "Sequelize.STRING"
+                },
+                "cat_id": {
+                    "field": "cat_id",
+                    "allowNull": true,
+                    "references": {
+                        "model": "categories",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "status": {
+                    "defaultValue": {
+                        "value": true
+                    },
+                    "field": "status",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "created_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updated_at",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
         "roles": {
             "tableName": "roles",
             "schema": {
@@ -65,7 +242,15 @@
                     "seqType": "Sequelize.STRING"
                 },
                 "rol_id": {
+                    "default": 3,
                     "field": "rol_id",
+                    "allowNull": true,
+                    "references": {
+                        "model": "roles",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "status": {
@@ -89,5 +274,5 @@
             "indexes": []
         }
     },
-    "revision": 3
+    "revision": 10
 }

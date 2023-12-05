@@ -1,3 +1,5 @@
+import { verifyToken } from "../../utils/jwtUtil"
+
 export class UserController{
   // Creamos el constructor de la clase
   constructor(userService) {
@@ -6,7 +8,7 @@ export class UserController{
 
   // Creamos los métodos de la clase
   async getAllUsers(req, res){
-      return res.json( await this.userService.getAll())
+    return res.json( await this.userService.getAll() )
   }
 
   async getUserById(req, res){
@@ -42,23 +44,13 @@ export class UserController{
     }
     res.status(404).send("")
   }
-}
 
-/**
- * export { userController }
- * import { userController } from "./userController.js"
- * ----------------------------------------------------
- * 
- * export default userController
- * import userC from "./userController.js"
- * 
- * const userController = new userC()
- * ----------------------------------------
- * 
- * export default new userController
- * import userController from "./userController.js"
- * 
- * userController.createUSer()
- * 
-*/
-// export default new userController
+  // async findUser(req, res){
+  //   const token = req.headers.authorizationssplit(" ")[1] || null
+  //   if (!token){
+  //     return res.json({ 'message': 'No id' })
+  //   }
+  //   const { identity } = verifyToken(token)
+  //   return res.json( { identity } )
+  // }
+}

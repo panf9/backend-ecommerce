@@ -19,9 +19,10 @@ class UserRouter {
     return this.router.
     get("/", [isAutenticated], (req, res) => this.controller.getAllUsers(req, res)).
     post("/", (req, res) => this.controller.createUser(req, res)).
-    get("/:id", (req, res) => this.controller.getUserById(req, res)).
-    patch("/:id", (req, res) => this.controller.updateUser(req, res)).
-    delete("/:id", (req, res) => this.controller.deleteUser(req, res))
+    get("/:id", [isAutenticated], (req, res) => this.controller.getUserById(req, res)).
+    patch("/:id", [isAutenticated], (req, res) => this.controller.updateUser(req, res)).
+    delete("/:id", [isAutenticated], (req, res) => this.controller.deleteUser(req, res))
+    // get("/find", [isAutenticated], (req, res) => this.controller.findUser(req, res))
   }
 }
 

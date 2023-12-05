@@ -1,6 +1,7 @@
 import express from "express"
 import bodyParser from "body-parser"
 
+const cors = require('cors')
 export class ExpressConfig {
     constructor() {
         this.port = process.env.PORT
@@ -9,6 +10,7 @@ export class ExpressConfig {
     }
 
     _setMiddleware(){
+        this.app.use(cors())
         this.app.use(bodyParser.json())
     }
 

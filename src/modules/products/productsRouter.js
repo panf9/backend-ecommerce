@@ -3,7 +3,7 @@ import { models } from "../../infrastructure/models"
 import { ProductService } from "./productsService"
 import { ProductController } from "./productsController"
 
-class UserRouter {
+class ProductRouter {
   constructor(){
     this.router = Router()
     this.service = new ProductService(models)
@@ -22,4 +22,4 @@ class UserRouter {
   }
 }
 
-export default new UserRouter()
+export default new ProductRouter()
